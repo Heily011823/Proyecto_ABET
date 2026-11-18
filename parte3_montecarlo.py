@@ -1,6 +1,6 @@
 from pylab import *
 import networkx as nx
-
+import builtins
 
 # Parametros de la red
 N = 100
@@ -96,7 +96,7 @@ def simulation(ps):
             update(ps)
 
 
-        I = sum(g.nodes[n]['state'] for n in g.nodes)
+        I = builtins.sum(g.nodes[n]['state'] for n in g.nodes)
         E = g.number_of_edges()
 
 
@@ -142,8 +142,7 @@ for ps in valores_ps:
 
 
     # Clasificacion de la epidemia
-    extinciones = sum(1 for serie in todas_I if serie[-1] == 0)
-
+    extinciones = builtins.sum(1 for serie in todas_I if serie[-1] == 0)
 
     porcentaje = extinciones / simulaciones
 
